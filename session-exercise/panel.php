@@ -1,10 +1,8 @@
 <!-- this file should indicate on the screen whether the user who is trying to access is logged in or not, in case the user is logged, it must also contain a button to log out, 
 destroy the current session and then redirect you to the "index.php" file. If not logged you must alert the user that this is a private section. -->
 <?php
-session_start();
-if (!isset($_SESSION["email"])) {
-    header("location:./index.php");
-}
+require_once("./modules/functions.php");
+checkSession();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +38,7 @@ if (!isset($_SESSION["email"])) {
                             <a class="nav-link" href="#">Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="./redirects/close_session.php">Log out</a>
+                            <a class="nav-link" href="./modules/close_session.php">Log out</a>
                         </li>
                     </ul>
                     <form class="d-flex">
