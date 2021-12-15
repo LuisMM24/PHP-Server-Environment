@@ -16,16 +16,16 @@ In case you log in or are already logged in, you must be automatically redirecte
 <body class="text-center">
 
     <main class="form-signin">
-        <form>
+        <form action="./redirects/validate.php" method="POST">
             <img class="mb-4" src="./assets/images/Assembler.png" alt="" width="100" height="100">
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
 
             <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
                 <label for="floatingInput">Email address</label>
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <input type="password" name="pass" class="form-control" id="floatingPassword" placeholder="Password" required>
                 <label for="floatingPassword">Password</label>
             </div>
 
@@ -35,7 +35,6 @@ In case you log in or are already logged in, you must be automatically redirecte
                 </label>
             </div>
             <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
-            <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
         </form>
     </main>
 

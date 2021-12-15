@@ -1,5 +1,8 @@
 <!-- this file should indicate on the screen whether the user who is trying to access is logged in or not, in case the user is logged, it must also contain a button to log out, 
 destroy the current session and then redirect you to the "index.php" file. If not logged you must alert the user that this is a private section. -->
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +20,7 @@ destroy the current session and then redirect you to the "index.php" file. If no
 
         <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Welcome Username</a>
+                <a class="navbar-brand" href="#">Welcome <?php echo $_SESSION["email"] ?></a>
                 <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
