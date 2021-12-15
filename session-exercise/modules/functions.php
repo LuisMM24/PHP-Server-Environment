@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 function checkSession()
 {
     if (!isset($_SESSION["email"])) {
@@ -11,8 +10,10 @@ function checkSession()
 
 function checkLogOut()
 {
-    if (!isset($_SESSION)) {
-        "<div class='alert alert-success' role='alert' style='margin-top: 10px;'>Logged out!</div>";
+    if (isset($_GET["loggedout"])) {
+        echo "<div class='alert alert-success' role='alert' style='margin-top: 10px;'>Logged out!</div>";
+    } else {
+        return;
     }
 }
 
@@ -54,5 +55,5 @@ function deleteSession()
         );
     }
     session_destroy();
-    header("location:./../index.php");
+    header("location:./../index.php?loggedout=1");
 }
