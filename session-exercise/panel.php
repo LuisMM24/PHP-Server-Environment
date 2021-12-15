@@ -2,6 +2,9 @@
 destroy the current session and then redirect you to the "index.php" file. If not logged you must alert the user that this is a private section. -->
 <?php
 session_start();
+if (!isset($_SESSION["email"])) {
+    header("location:./index.php");
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +40,7 @@ session_start();
                             <a class="nav-link" href="#">Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Log out</a>
+                            <a class="nav-link" href="./redirects/close_session.php">Log out</a>
                         </li>
                     </ul>
                     <form class="d-flex">
