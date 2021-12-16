@@ -8,6 +8,15 @@ function checkSession()
     }
 }
 
+function checkLogIn()
+{
+    if (isset($_SESSION["email"])) {
+        header("location:./panel.php");
+    } else {
+        return;
+    }
+}
+
 function checkLogOut()
 {
     if (isset($_GET["loggedout"])) {

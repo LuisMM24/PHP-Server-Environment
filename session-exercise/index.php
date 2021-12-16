@@ -3,6 +3,7 @@ In case you log in or are already logged in, you must be automatically redirecte
 -->
 <?php
 require_once("./modules/functions.php");
+checkLogin();
 ?>
 <!DOCTYPE html>
 <html lang="en">
